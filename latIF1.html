@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Percabangan 1</title>
+</head>
+<body>
+    <form onsubmit="return false">
+        <label for="nilai">Masukkan Nilai</label>
+        <input type="number" id="nilai_siswa">
+        <button onclick="ceknilai()">Cek nilai Siswa</button>
+    </form>
+    <div id="hasil"></div>
+    <script>
+        function ceknilai() {
+            let nilai = document.getElementById('nilai_siswa').value
+            if (nilai >= 65) {
+                document.getElementById('hasil').innerHTML = "Anda lulus"
+            } else {
+                document.getElementById('hasil').innerHTML = "Anda tidak lulus"
+            }
+        }
+    </script>
+</body>
+</html>
