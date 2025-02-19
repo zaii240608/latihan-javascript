@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelanggan Setia</title>
+</head>
+<body>
+    <form onsubmit="return false">
+        <label for="status">Status</label>
+        <input type="text" id="sts"><br><br>
+        <label for="jlf">Jumlah lembar fotocopy</label>
+        <input type="number" id="jl">
+        <button onclick="cek()">Cek</button>
+    </form>
+    <div id="hasil"></div>
+    <script>
+        function cek() {
+        let status = document.getElementById('sts').value
+        let jlf = parseInt(document.getElementById('jl').value)
+        if (status == "Langganan") {
+            var hpp = 75
+        } else  {
+            if (jlf < 100) {
+             hpp = 100
+            } else {
+             hpp = 85
+            }
+        }
+        let th = jlf * hpp
+        document.getElementById('hasil').innerHTML = "TH = " + th
+    }
+
+    </script>
+</body>
+</html>
